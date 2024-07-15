@@ -50,11 +50,14 @@ def login():
     username = entry_username.get()
     password = entry_password.get()
 
-    if username == "kunal-ai" and password == "12":  # Replace with your actual authentication logic
+    if check_login(username, password):
+        messagebox.showinfo("Login", "Login successful!")
         root.destroy()
         open_store_management_system()
     else:
         messagebox.showerror("Error", "Invalid Credentials")
+
+
 
 def open_store_management_system():
     import store
